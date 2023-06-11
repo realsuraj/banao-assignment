@@ -47,8 +47,8 @@ class _BottomNavState
     return Scaffold(
     appBar: AppBar(
       toolbarHeight: 0,
-      backgroundColor:  Color(0xffEEF3FD),
-     
+       systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Color(0xffEEF3FD)),
+  
   
     ),
       
