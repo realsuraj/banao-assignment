@@ -71,7 +71,7 @@ class _MyHomeState extends State<MyHome> {
                    Text("Programs for you", style: GoogleFonts.lato(
                    textStyle: TextStyle(
                     color: Colors.black,
-                   fontWeight: FontWeight.w500, fontSize: 25),),),
+                   fontWeight: FontWeight.w500, fontSize: 22),),),
                        Container(
                          child: Row(
                 children: [ 
@@ -97,7 +97,7 @@ class _MyHomeState extends State<MyHome> {
             height: MediaQuery.of(context).size.height * 0.45,  
 
 
-            child: new ListView.builder(itemBuilder: (context, index){
+            child: ListView.builder(itemBuilder: (context, index){
                 return MyCard();
               }, 
               itemCount: 2,
@@ -114,7 +114,7 @@ class _MyHomeState extends State<MyHome> {
                    Text("Events and experiences", style: GoogleFonts.lato(
                    textStyle: TextStyle(
                     color: Colors.black,
-                   fontWeight: FontWeight.w500, fontSize: 25),),),
+                   fontWeight: FontWeight.w500, fontSize: 22),),),
                        Container(
                          child: Row(
                 children: [ Text("View all",  style: GoogleFonts.lato(
@@ -132,10 +132,11 @@ class _MyHomeState extends State<MyHome> {
              ),
 
             Container(
+              margin: EdgeInsets.all(10),
             height: MediaQuery.of(context).size.height * 0.48,  
 
 
-            child: new ListView.builder(itemBuilder: (context, index){  
+            child: ListView.builder(itemBuilder: (context, index){  
                 return MyCardAdv();
               }, 
               itemCount: 2,
@@ -155,7 +156,7 @@ class _MyHomeState extends State<MyHome> {
                    Text("Lessons for you", style: GoogleFonts.lato(
                    textStyle: TextStyle(
                     color: Colors.black,
-                   fontWeight: FontWeight.w500, fontSize: 25),),),
+                   fontWeight: FontWeight.w500, fontSize: 22),),),
                        Container(
                          child: Row(
                 children: [ Text("View all",  style: GoogleFonts.lato(
@@ -174,8 +175,9 @@ class _MyHomeState extends State<MyHome> {
              ),
 
             Container(
+              margin: EdgeInsets.all(10),
             height: MediaQuery.of(context).size.height * 0.48,  
-            child: new ListView.builder(itemBuilder: (context, index){  
+            child: ListView.builder(itemBuilder: (context, index){  
                 return MyCardAdvTwo();
               }, 
               itemCount: 2,
