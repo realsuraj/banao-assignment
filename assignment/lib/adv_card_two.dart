@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyCardAdvTwo extends StatefulWidget {
-  const MyCardAdvTwo({super.key});
+  String name,category,createdAt;
+  bool isLocked;
+  int duration;
+   MyCardAdvTwo({super.key,required this.name,required this.category, required this.duration,required this.isLocked
+   , required this.createdAt});
 
   @override
   State<MyCardAdvTwo> createState() => _MyCardAdvTwoState();
@@ -12,6 +16,7 @@ class MyCardAdvTwo extends StatefulWidget {
 class _MyCardAdvTwoState extends State<MyCardAdvTwo> {
   @override
   Widget build(BuildContext context) {
+   
     return Container(
                   width: MediaQuery.of(context).size.width*0.7,
 
@@ -29,7 +34,7 @@ class _MyCardAdvTwoState extends State<MyCardAdvTwo> {
           Container(
       margin: EdgeInsets.symmetric(horizontal: 8,vertical: 5),
 
-            child: Text("LifeStyle", style: GoogleFonts.lato(
+            child: Text(widget.category, style: GoogleFonts.lato(
                        textStyle: TextStyle(color: Color(0xff598BED),
                        fontWeight: FontWeight.normal, fontSize: 15),),),
           ),
@@ -37,24 +42,28 @@ class _MyCardAdvTwoState extends State<MyCardAdvTwo> {
           Container(
       padding: EdgeInsets.symmetric(horizontal: 8,vertical: 5),
 
-            child: Text("A complete guide for your new born baby", style: GoogleFonts.lato(
+            child: Text(widget.name, style: GoogleFonts.lato(
                        textStyle: TextStyle(color: Colors.black,
-                       fontWeight: FontWeight.w700, fontSize: 22),),),
+                       fontWeight: FontWeight.w700, fontSize: 22),),
+                        overflow: TextOverflow.ellipsis, maxLines: 2,),
           ),
           SizedBox(height: 16,),
 
-          Container(
+
+             Container(
       padding: EdgeInsets.symmetric(horizontal: 8),
 
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("3 min",style: GoogleFonts.lato(
+                Text("${widget.duration} min",style: GoogleFonts.lato(
                        textStyle: TextStyle(color: Color(0xff6D747A),
                        fontWeight: FontWeight.normal, fontSize: 15),),),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 15,vertical: 5),
-                  child: Image.asset("assets/lock.png")),
+                  child: Visibility(
+                    visible: widget.isLocked,
+                    child: Image.asset("assets/lock.png"))),
                 
               ],
             )

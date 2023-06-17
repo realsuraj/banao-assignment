@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyCard extends StatefulWidget {
-  const MyCard({super.key});
+  final String name,category,lesson;
+  const MyCard({super.key, required this.name, required this.category, required this.lesson});
 
   @override
   State<MyCard> createState() => _MyCardState();
@@ -29,7 +30,7 @@ class _MyCardState extends State<MyCard> {
           Container(
       margin: EdgeInsets.symmetric(horizontal: 8,vertical: 5),
 
-            child: Text("LifeStyle", style: GoogleFonts.lato(
+            child: Text(widget.category, style: GoogleFonts.lato(
                        textStyle: TextStyle(color: Color(0xff598BED),
                        fontWeight: FontWeight.normal, fontSize: 15),),),
           ),
@@ -37,7 +38,7 @@ class _MyCardState extends State<MyCard> {
           Container(
       padding: EdgeInsets.symmetric(horizontal: 8,vertical: 5),
 
-            child: Text("A complete guide for your new born baby", style: GoogleFonts.lato(
+            child: Text(widget.name, style: GoogleFonts.lato(
                        textStyle: TextStyle(color: Colors.black,
                        fontWeight: FontWeight.w700, fontSize: 22),),),
           ),
@@ -46,7 +47,7 @@ class _MyCardState extends State<MyCard> {
           Container(
       padding: EdgeInsets.symmetric(horizontal: 8),
 
-            child: Text("16 lessons",style: GoogleFonts.lato(
+            child: Text("${widget.lesson} lesson",style: GoogleFonts.lato(
                        textStyle: TextStyle(color: Color(0xff6D747A),
                        fontWeight: FontWeight.normal, fontSize: 15),),),
           ),
