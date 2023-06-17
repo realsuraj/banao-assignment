@@ -161,8 +161,6 @@ class _MyHomeState extends State<MyHome> {
             ListView.builder(itemBuilder: (context, index){  
                 return MyCardAdv(category: apiCardTwo[index].category.toString(), 
                 createdAt: apiCardTwo[index].createdAt.toString(), 
-                duration: int.parse(apiCardTwo[index].duration.toString()), 
-                isLocked: bool.parse(apiCardTwo[index].locked.toString()), 
                 name: apiCardTwo[index].name.toString(),);
               }, 
               itemCount: apiCardTwo.length,
@@ -208,7 +206,6 @@ class _MyHomeState extends State<MyHome> {
             
             ListView.builder(itemBuilder: (context, index){  
                 return  MyCardAdvTwo(category: apiCardTwo[index].category.toString(), 
-                createdAt: apiCardTwo[index].createdAt.toString(), 
                 duration: int.parse(apiCardTwo[index].duration.toString()), 
                 isLocked: bool.parse(apiCardTwo[index].locked.toString()), 
                 name: apiCardTwo[index].name.toString(),);
@@ -240,6 +237,7 @@ class _MyHomeState extends State<MyHome> {
     });
     return apiCardTwo;
   } catch (error) {
+
     throw Exception('Failed to fetch apiCardTwo: $error');
   }
 }
@@ -253,6 +251,7 @@ class _MyHomeState extends State<MyHome> {
       final modelCardOne item = modelCardOne.fromJson(itemData);
       apiCardOne.add(item);
     }
+
     setState(() {
       isLoadingForCard = false;
     });
@@ -261,4 +260,5 @@ class _MyHomeState extends State<MyHome> {
     throw Exception('Failed to fetch apiCardOne: $error');
   }
 }
+
 }

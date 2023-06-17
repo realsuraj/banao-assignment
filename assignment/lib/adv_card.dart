@@ -5,9 +5,7 @@ import 'package:intl/intl.dart';
 
 class MyCardAdv extends StatefulWidget {
   final name,category,createdAt;
-  final bool isLocked;
-  final duration;
-   MyCardAdv({super.key,required this.name,required this.category, required this.duration,required this.isLocked
+   MyCardAdv({super.key,required this.name,required this.category
    , required this.createdAt});
 
   @override

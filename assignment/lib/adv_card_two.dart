@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyCardAdvTwo extends StatefulWidget {
-  String name,category,createdAt;
-  bool isLocked;
-  int duration;
+  final name,category;
+  final bool isLocked;
+  final int duration;
    MyCardAdvTwo({super.key,required this.name,required this.category, required this.duration,required this.isLocked
-   , required this.createdAt});
+   });
 
   @override
   State<MyCardAdvTwo> createState() => _MyCardAdvTwoState();
